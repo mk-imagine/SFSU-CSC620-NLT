@@ -120,9 +120,45 @@ regression equation
 \end{align*}
 For a single class evaluation (class $a$/not class $a$), our MLE is the sigmoid function
 \[ \hat{y} = \sigma(z) = \frac{1}{1 + e^{ - z}}. \]
+For multiclass evaluation, we use the softmax function which essentially
+generalizes the sigmoid function with
+\[
+  [\hat{y}_1, \hat{y}_2, \cdots, \hat{y}_k] = \operatorname*{softmax}\left(\vec Z\right) 
+    = \left[ \operatorname*{softmax}\left(Z_1\right), \operatorname*{softmax}\left(Z_2\right), \cdots, \operatorname*{softmax}\left(Z_k\right),  \right]
+\]
+where
+\[
+  \hat{y}_i = P\giventhat{y = i}{x} = \operatorname*{softmax}(Z_i)
+      = \frac{e^{\vec{w}_i\cdot\vec{x} + b_i}}
+      {\sum_{j = 1}^ke^{\vec{w}_j\cdot\vec{x} + b_j}},\quad 1 \leq i \leq k
+\]
+which gives us a probability distribution of classes.
 
+During the training step, we compare the ground truth labels with the MLE
+results with a Cross-Entropy Loss Function.  This loss function is then
+optimized (minimized) via Gradient Descent (e.g. calculating the partial
+derivative, and using that to "descend" towards a lower minimum and repeating).
 
 \section{Text Classification Evaluation}
+Evaluating text classification can be done using an \emph{extrinsic}, or
+\emph{intrinsic} approach.  For the intrinsic case, we do a
+qualitative evaluation, whereas for the extrinsic case, we use the models to see
+which produces better results.  Using intrinsic evaluation, labelled data is
+split between a training and test set.  The model is trained on the training
+set, then the model's predictions for the test set are compared against the
+ground truth labels to see how well the predictions match.  \emph{Precision} and
+\emph{recall} are the metrics used to evaluate the effectiveness of the
+classification model.  Precision measures the percent of a true positive
+prediction that were actually that ground truth class:
+\[ P = \frac{tp}{(tp + fp)},\quad\text{where }tp = \text{true positive, and }fp
+= \text{false positive}. \]
+Whereas, recall measures the percent of a ground truth class that are predicted
+as that particular class:
+\[ R = \frac{tp}{(tp + fn)},\quad\text{where }tp = \text{true positive, and }fp
+= \text{false negative}. \]
+A combined metric called F-measure will assess the inherent tradeoff between
+precision and recall with
+\[ F = \frac{(\beta^2 + 1)PR}{\beta^2P + R},\quad 0\leq \beta\leq\infty. \]
 
 \section{Vector Semantics}
 

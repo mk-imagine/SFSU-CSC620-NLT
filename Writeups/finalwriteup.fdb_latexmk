@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1670561732 "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" "finalwriteup.pdf" "finalwriteup" 1670561733
-  "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" 1670561732 5236 db683e065fa072d0fc4ec7e12a804a6d ""
+["pdflatex"] 1670622252 "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" "finalwriteup.pdf" "finalwriteup" 1670622252
+  "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" 1670622251 7377 98c6ce79154c35f6c7a6379587ce8412 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -27,6 +27,7 @@
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
@@ -124,9 +125,9 @@
   "/usr/local/texlive/2022basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1663115745 2365601 def3eea375fb8c92053ad9798f52f38f ""
   "/usr/local/texlive/2022basic/texmf.cnf" 1647274000 628 5a32b7ea7dd5bed632a871bee125276d ""
   "ams_report.sty" 1670557785 2494 0bc9de8a91ec43ef2d7f5f94eb5685eb ""
-  "finalwriteup.aux" 1670561733 2025 53dc6af85be3e8963cda5aed7444ee05 "pdflatex"
-  "finalwriteup.out" 1670561733 2063 fa0845166f1e1dc378d925edc1d861d4 "pdflatex"
-  "finalwriteup.tex" 1670561732 5236 db683e065fa072d0fc4ec7e12a804a6d ""
+  "finalwriteup.aux" 1670622252 2025 49c308660109315e8daef255f02f1543 "pdflatex"
+  "finalwriteup.out" 1670622252 2063 fa0845166f1e1dc378d925edc1d861d4 "pdflatex"
+  "finalwriteup.tex" 1670622251 7377 98c6ce79154c35f6c7a6379587ce8412 ""
   (generated)
   "finalwriteup.aux"
   "finalwriteup.log"
