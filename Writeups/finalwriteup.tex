@@ -1,0 +1,135 @@
+\documentclass[12pt]{report}
+\usepackage{ams_report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Data
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\firstName}{Mark}
+\newcommand{\lastName}{Kim}
+\newcommand{\instructor}{Professor Anagha Kulkarni}
+\newcommand{\course}{CSC 620}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography Info
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% First page name, class, etc
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+\firstName\ \lastName\\
+\instructor\\
+\course\\
+\today\\
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Changes paragraph indentation to 0.5in
+% Ragged right
+%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0.5in}
+% \raggedright
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Regular Expressions}
+
+Regular expression (RegEx) is a domain specific language that allows us to search for
+lexical patterns in a corpus.  By applying such expressions, we can normalize
+text by removing stop words, punctuation, etc.  This tool, however, can be
+indiscriminate in its application.  Nevertheless, it can be a powerful tool for
+finding (and/or replacing) text according to static rules set by the user.
+
+\section{Edit Distance}
+Edit distance is a method of quantifying similarities or dissimilarities between
+text.  If two texts have a low edit distance, they are highly similar, and high
+edit distance means the texts have low similarity.  \emph{Minimum} edit
+distance simply quantifies the minimum number of editing operations it takes to
+convert one string to the next.  These edit operations consist of
+\emph{insertion}, \emph{deletion}, and \emph{substitution}.  The Levenshtein
+formulation of operations applies a cost for each operation as follows:
+\begin{itemize}
+  \item Insertion: $1$
+  \item Deletion: $1$
+  \item Substitution: $2$
+\end{itemize}
+The operations alone does not allow us to find the minimum distance.  One must
+also take into account \emph{alignment} to find the minimum distance.
+
+\section{N-gram based Language Modeling}
+N-gram based language modeling is a method of modeling that uses the counts of
+words in a corpus to determine the probability that a particular word will
+occur.  This type of modeling is based off of the Chain Rule of Probability.
+This means that the probability of a particular sequence of words is simply the
+product of the probabilities of each word that occurs in the corpus given the
+words preceding it:
+\[ P(w_1, w_2, \cdots, w_n) = \prod_i P\giventhat{w_i}{w_1w_2\cdots w_{i - 1}}. \]
+It is sufficient, however, to simplify these calculations as follows:
+\begin{itemize}
+  \item Unigram Model: $P(w_1, w_2, \cdots, w_n) \approx \prod_i P(w_i)$
+  \item Bigram Model: $P(w_1, w_2, \cdots, w_n) \approx \prod_i P\giventhat{w_i}{w_{i-1}}$
+\end{itemize}
+
+\section{Text Classification using Na\"ive Bayes}
+The Na\"ive Bayes method of text classification relies on the Bayes Rule which
+states
+\[ P\giventhat{c}{d} = \frac{P\giventhat{d}{c}P(c)}{P(d)}, \]
+where $c$ is the class and $d$ is the document (the denominator is ignored
+for our use).
+Then our predicted class will be
+\begin{align*}
+  C_{MAP} &= \operatorname*{argmax}\limits_{c \in C} P\giventhat{c}{d}\\
+  &= \operatorname*{argmax}\limits_{c \in C}P\giventhat{d}{c}P(c)\\
+  &= \operatorname*{argmax}\limits_{c \in C}P\giventhat{x_1, x_2, \cdots, x_n}{c}P(c)
+\end{align*}
+Despite the fact that probabilities of features (which can be words, characters,
+bigrams, etc.) are not independent given a document class $c$, we can
+approximate the probabilities of those features (given a class $c$) as follows:
+\[ C_{NB} = \operatorname*{argmax}\limits_{c \in C}P(c)\prod_{x\in
+X}P\giventhat{x}{c}. \]
+We need to find the Maximum Likelihood Estimates by using the relative
+frequencies in the data which can be calculated by
+\[ \hat{P}\giventhat{x_i}{c_j} = \frac{\operatorname*{count}(x_i, c_j)}{\sum_{k
+= 1}^{n}\operatorname*{count}(x_k, c_j)} \]
+Once trained, we use our argmax function to predict/assign a class label to the
+document we are trying to classify.
+
+\section{Text Classification using Logistic Regression}
+Similar to Na\"ive Bayes, Logistic Regression uses a feature set for text
+classification and is also uses a supervised learning model.  Logistic
+regression uses the statistical modelling technique called regression analysis.
+This method of analysis consists of two parts:
+\begin{enumerate}
+  \item The Objective/Loss Function
+  \item Optimization of the Objective Function by using Stochastic Gradient
+  Descent
+\end{enumerate}
+The Objective Function tells us the loss (number of classification errors) when
+using a particular weight vector $\vec{w}$ and bias $b$ when using the linear
+regression equation
+\begin{align*}
+  z &= \vec{w} \cdot \vec{x} + b\\
+  &= \left(\sum_{i = 1}^n w_i x_i \right) + b
+\end{align*}
+For a single class evaluation (class $a$/not class $a$), our MLE is the sigmoid function
+\[ \hat{y} = \sigma(z) = \frac{1}{1 + e^{ - z}}. \]
+
+
+\section{Text Classification Evaluation}
+
+\section{Vector Semantics}
+
+\section{Feedforward Neural Networks}
+
+\section{Sequence Processing using Recurrent Neural Networks}
+
+\section{Sequence Processing using Transformers}
+
+\end{document}
