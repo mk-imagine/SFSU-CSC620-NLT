@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1670622252 "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" "finalwriteup.pdf" "finalwriteup" 1670622252
-  "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" 1670622251 7377 98c6ce79154c35f6c7a6379587ce8412 ""
+["pdflatex"] 1670631204 "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" "finalwriteup.pdf" "finalwriteup" 1670631204
+  "/Users/mark/Repos/csc620/Writeups/finalwriteup.tex" 1670631203 8284 9facafca036c56f94cb161c271ed2f16 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -125,9 +125,9 @@
   "/usr/local/texlive/2022basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1663115745 2365601 def3eea375fb8c92053ad9798f52f38f ""
   "/usr/local/texlive/2022basic/texmf.cnf" 1647274000 628 5a32b7ea7dd5bed632a871bee125276d ""
   "ams_report.sty" 1670557785 2494 0bc9de8a91ec43ef2d7f5f94eb5685eb ""
-  "finalwriteup.aux" 1670622252 2025 49c308660109315e8daef255f02f1543 "pdflatex"
-  "finalwriteup.out" 1670622252 2063 fa0845166f1e1dc378d925edc1d861d4 "pdflatex"
-  "finalwriteup.tex" 1670622251 7377 98c6ce79154c35f6c7a6379587ce8412 ""
+  "finalwriteup.aux" 1670631204 2025 49c308660109315e8daef255f02f1543 "pdflatex"
+  "finalwriteup.out" 1670631204 2063 fa0845166f1e1dc378d925edc1d861d4 "pdflatex"
+  "finalwriteup.tex" 1670631203 8284 9facafca036c56f94cb161c271ed2f16 ""
   (generated)
   "finalwriteup.aux"
   "finalwriteup.log"

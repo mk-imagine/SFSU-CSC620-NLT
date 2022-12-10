@@ -161,6 +161,19 @@ precision and recall with
 \[ F = \frac{(\beta^2 + 1)PR}{\beta^2P + R},\quad 0\leq \beta\leq\infty. \]
 
 \section{Vector Semantics}
+Vector semantics are a type of lexical semantics where words are represented as
+a vector.  This vector representation captures the multi-dimensional attributes
+of a word such as its similarity or relation to other words, or context.  This
+meaning of words, called \emph{embeddings}, can be statically engineered
+(feature engineering) or dynamically found through various methods like using
+deep learning algorithms.  Once trained on a data set, these vectors can be
+compared to other word vectors to determine their similarity by measuring the
+difference in angles between them using cosine, which is based off of the vector
+dot product of the two vectors.  This can be computed as:
+\[
+  \operatorname*{cosine}(\vec{v}, \vec{w}) = \frac{\vec{v}\cdot\vec{w}}{\lvert v\rvert\lvert w\rvert}
+  = \frac{\displaystyle\sum_{i = 1}^N v_iw_i}{\displaystyle\sqrt{\sum_{i = 1}^N v_i^2}\sqrt{\sum_{i = 1}^N w_i^2}}.
+\]
 
 \section{Feedforward Neural Networks}
 
