@@ -799,6 +799,9 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT finalwriteup.aux
 INPUT ./finalwriteup.out
 INPUT ./finalwriteup.out

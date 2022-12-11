@@ -164,7 +164,7 @@ precision and recall with
 Vector semantics are a type of lexical semantics where words are represented as
 a vector.  This vector representation captures the multi-dimensional attributes
 of a word such as its similarity or relation to other words, or context.  This
-meaning of words, called \emph{embeddings}, can be statically engineered
+meaning of words, called \emph{word embeddings}, can be statically engineered
 (feature engineering) or dynamically found through various methods like using
 deep learning algorithms.  Once trained on a data set, these vectors can be
 compared to other word vectors to determine their similarity by measuring the
@@ -174,11 +174,64 @@ dot product of the two vectors.  This can be computed as:
   \operatorname*{cosine}(\vec{v}, \vec{w}) = \frac{\vec{v}\cdot\vec{w}}{\lvert v\rvert\lvert w\rvert}
   = \frac{\displaystyle\sum_{i = 1}^N v_iw_i}{\displaystyle\sqrt{\sum_{i = 1}^N v_i^2}\sqrt{\sum_{i = 1}^N w_i^2}}.
 \]
+These comparisons can then be used to model language, text classification, and
+as I have recently learned other applications that may not be related to language.
 
-\section{Feedforward Neural Networks}
+\section{Feed-Forward Neural Networks}
+Feed-Forward neural networks are the simplest type of multi-layer neural
+network.  These networks consist of inputs values, one or more hidden layers,
+and an output layer.  Their standard architecture is of fully connected layers,
+which means that each node of the previous layer has weights for every node of
+the current layer.  These feed-forward neural networks basically expand upon
+linear regression; instead of doing a single linear regression calculation for a
+single node, many linear regressions are applied over the number of nodes in
+each layer of the neural network.  This calculation is applied through matrix
+multiplication which yield the output vectors for the next layer which are the
+inputs for the next matrix multiplication, and so on.  This part of the training
+is the \emph{forward pass}.  The weights are then updated by back-propagating the
+weight updates in the \emph{backward pass}.
 
 \section{Sequence Processing using Recurrent Neural Networks}
+Recurrent neural networks provide a solution to the inherently sequential nature
+and varying length of language.  In a recurrent neural network, inputs are
+presented one at a time. The network contains one or more cycles in its hidden
+layers (i.e. connections) which provide a memory or context for each sequence
+step. Because of this ability to provide that memory, prior context is no longer
+static as it is in a sliding window approach.  This works by combining the
+hidden layer values in a previous sequence step with the input of the current
+sequence step.  This is done by adding the matrix multiplication results from
+the corresponding weights for the input and the previous hidden layer.
 
 \section{Sequence Processing using Transformers}
+RNN's have two primary issues:
+\begin{enumerate}
+  \item their cyclical nature produces a vanishing gradient (e.g. multiplying
+  numbers less than 1 produce ever decreasing magnitudes)
+  \item the inherent sequential nature of RNN's make distributed parallel
+  computation difficult.
+\end{enumerate}
+Transformers were developed to solve these problems.  In a transformer, cycles
+are eliminated with a return to architectures similar to FFNN's.  This newer
+neural network architecture introduced the concept of a self-attention layer.
+This layer has access to all the input items preceding it and no access to
+inputs beyond the current one in the sequence.  The self-attention layer then is
+able to assign levels of attention to all previous words by comparing the words
+(their embeddings) using a dot product of the word vectors, which produces a
+scalar value.  We come back to the softmax function that constrains the scalar
+value to a probability value, which is then used to weight the input vectors.
+The aggregated value, which is calculated by summing the values of all the
+previous weighted input vectors, generates the output vector.  Perhaps the most
+intriguing aspect of this type of processing is that each input embedding plays
+three roles with respect to the attention process:
+\begin{description}
+  \item[query] the current focus of attention when being compared to all
+  preceding inputs
+  \item[key] a preceding input when compared to the current focus
+  of attention
+  \item[value] a value to compute the output of the current focus of attention.
+\end{description}
+Each of these roles are associated with its own parameter matrix.  Finally, each
+of these parameter matrices transforms the original input embedding into a new
+embedding that captures all of the role-specific information.
 
 \end{document}
