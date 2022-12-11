@@ -1,4 +1,10 @@
 .DS_Store
 .conda_config
 .ipynb_checkpoints/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
 env
