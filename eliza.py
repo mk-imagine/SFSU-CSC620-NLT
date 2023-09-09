@@ -53,6 +53,10 @@ pairs = (
         ),
     ),
     (
+        # "I'm" or "I am"
+        # I'm stressed about my finals.
+        #   1          2           3
+        # How does being (stressed about my) about finals affect you?
         r"I(\'m| am) (.*) (finals?|exams?|tests?|quiz(zes)?|homework|projects?|assignments?)(.*)",
         (
             "Tell me more about your %3.",
